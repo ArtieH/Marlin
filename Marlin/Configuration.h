@@ -61,7 +61,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Original author or contributor.
+#define STRING_CONFIG_H_AUTHOR "(MarlinFirmware)" // Original author or contributor.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 // @section machine
@@ -70,6 +70,8 @@
 #ifndef MOTHERBOARD
   #define MOTHERBOARD BOARD_RAMPS_14_EFB
 #endif
+
+// @section serial
 
 /**
  * Select the serial port on the board to use for communication with the host.
@@ -941,7 +943,7 @@
 //============================= Mechanical Settings =========================
 //===========================================================================
 
-// @section machine
+// @section kinematics
 
 // Enable one of the options below for CoreXY, CoreXZ, or CoreYZ kinematics,
 // either in the usual order or reversed
@@ -964,6 +966,15 @@
 
 // Enable for a belt style printer with endless "Z" motion
 //#define BELTPRINTER
+
+// Articulated robot (arm). Joints are directly mapped to axes with no kinematics.
+//#define ARTICULATED_ROBOT_ARM
+
+// For a hot wire cutter with parallel horizontal axes (X, I) where the heights of the two wire
+// ends are controlled by parallel axes (Y, J). Joints are directly mapped to axes (no kinematics).
+//#define FOAMCUTTER_XYUV
+
+// @section polargraph
 
 // Enable for Polargraph Kinematics
 //#define POLARGRAPH
@@ -1150,15 +1161,6 @@
 
   #define FEEDRATE_SCALING                  // Convert XY feedrate from mm/s to degrees/s on the fly
 #endif
-
-// @section machine
-
-// Articulated robot (arm). Joints are directly mapped to axes with no kinematics.
-//#define ARTICULATED_ROBOT_ARM
-
-// For a hot wire cutter with parallel horizontal axes (X, I) where the heights of the two wire
-// ends are controlled by parallel axes (Y, J). Joints are directly mapped to axes (no kinematics).
-//#define FOAMCUTTER_XYUV
 
 //===========================================================================
 //============================== Endstop Settings ===========================
@@ -2147,6 +2149,12 @@
   #if ENABLED(ENABLE_LEVELING_FADE_HEIGHT)
     #define DEFAULT_LEVELING_FADE_HEIGHT 10.0 // (mm) Default fade height.
   #endif
+
+  /**
+   * Add Z offset (M424 Z) that applies to all moves at the planner level.
+   * This Z offset will be automatically set to the middle value with G29.
+   */
+  //#define GLOBAL_MESH_Z_OFFSET
 
   /**
    * For Cartesian machines, instead of dividing moves on mesh boundaries,
@@ -3237,13 +3245,16 @@
  *  - Download https://github.com/CrealityOfficial/Ender-3S1/archive/3S1_Plus_Screen.zip
  *  - Copy the downloaded DWIN_SET folder to the SD card.
  *
+ * CREALITY_TOUCH
+ *  - CR-6 OEM touch screen. A DWIN display with touch.
+ *
  * Flash display with DGUS Displays for Marlin:
  *  - Format the SD card to FAT32 with an allocation size of 4kb.
  *  - Download files as specified for your type of display.
  *  - Plug the microSD card into the back of the display.
  *  - Boot the display and wait for the update to complete.
  *
- * :[ 'ORIGIN', 'FYSETC', 'HYPRECY', 'MKS', 'RELOADED', 'IA_CREALITY', 'E3S1PRO' ]
+ * :[ 'ORIGIN', 'FYSETC', 'HYPRECY', 'MKS', 'RELOADED', 'IA_CREALITY', 'E3S1PRO', 'CREALITY_TOUCH' ]
  */
 //#define DGUS_LCD_UI ORIGIN
 #if DGUS_UI_IS(MKS)
@@ -3291,6 +3302,12 @@
 // 320x240 Nextion 2.8" serial TFT Resistive Touch Screen NX3224T028
 //
 //#define NEXTION_TFT
+
+//
+// PanelDue touch controller by Escher3D
+// http://escher3d.com/pages/order/products/product2.php
+//
+//#define PANELDUE
 
 //
 // Third-party or vendor-customized controller interfaces.
@@ -3458,6 +3475,8 @@
  *   TFT_ROTATE_180, TFT_ROTATE_180_MIRROR_X, TFT_ROTATE_180_MIRROR_Y,
  *   TFT_ROTATE_270, TFT_ROTATE_270_MIRROR_X, TFT_ROTATE_270_MIRROR_Y,
  *   TFT_MIRROR_X, TFT_MIRROR_Y, TFT_NO_ROTATION
+ *
+ * :{ 'TFT_NO_ROTATION':'None', 'TFT_ROTATE_90':'90°', 'TFT_ROTATE_90_MIRROR_X':'90° (Mirror X)', 'TFT_ROTATE_90_MIRROR_Y':'90° (Mirror Y)', 'TFT_ROTATE_180':'180°', 'TFT_ROTATE_180_MIRROR_X':'180° (Mirror X)', 'TFT_ROTATE_180_MIRROR_Y':'180° (Mirror Y)', 'TFT_ROTATE_270':'270°', 'TFT_ROTATE_270_MIRROR_X':'270° (Mirror X)', 'TFT_ROTATE_270_MIRROR_Y':'270° (Mirror Y)', 'TFT_MIRROR_X':'Mirror X', 'TFT_MIRROR_Y':'Mirror Y' }
  */
 //#define TFT_ROTATION TFT_NO_ROTATION
 
