@@ -713,7 +713,7 @@
  */
 #define RAMPS_D9_PIN     SERVO1_PIN   // (6) also on J5-1
 #define E0_AUTO_FAN_PIN  P2_04   // (9)
-#define FAN_PIN -1
+#define FAN0_PIN -1
 
 
 /**
@@ -973,7 +973,7 @@
 
   // Safety: The probe needs time to recognize the command.
   //         Minimum command delay (ms). Enable and increase if needed.
-  #define BLTOUCH_DELAY 20 //RTH 500
+  #define BLTOUCH_DELAY 200 //RTH 500
 
   /**
    * Settings for BLTOUCH Classic 1.2, 1.3 or BLTouch Smart 1.0, 2.0, 2.2, 3.0, 3.1, and most clones:
