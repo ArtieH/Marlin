@@ -44,7 +44,7 @@
 // Servos
 //
 #define SERVO00_PIN                        P1_20   // (11) For FAN Extender Board. AVH
-#define SERVO0_PIN                         P1_20  // (11)
+#define SERVO0_PIN                         P1_28  // (19) AVH
 #define SERVO1_PIN                         P1_21  // ( 6) also on J5-1
 #define SERVO2_PIN                         P1_19  // ( 5)
 #define SERVO3_PIN                         P1_18  // ( 4) 5V output
