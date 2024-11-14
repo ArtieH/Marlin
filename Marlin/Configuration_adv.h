@@ -704,6 +704,18 @@
 #define COOLER_AUTO_FAN_TEMPERATURE 18
 #define COOLER_AUTO_FAN_SPEED 255
 
+
+/**
+ * Part Cooling Fan reasignment
+ * D8 port and Servo D6 ports swapped
+ * 24V to HotEnd Fan
+ * 12V to Part cooling fan
+ */
+#define RAMPS_D9_PIN     SERVO1_PIN   // (6) also on J5-1
+#define E0_AUTO_FAN_PIN  P2_04   // (9)
+
+
+
 /**
  * Hotend Cooling Fans tachometers
  *
