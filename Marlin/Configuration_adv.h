@@ -713,7 +713,7 @@
  */
 #define RAMPS_D9_PIN     SERVO1_PIN   // (6) also on J5-1
 #define E0_AUTO_FAN_PIN  P2_04   // (9)
-#define FAN0_PIN -1
+#define FAN0_PIN RAMPS_D9_PIN
 
 
 /**
