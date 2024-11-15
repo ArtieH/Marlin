@@ -1295,7 +1295,7 @@
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.16, 80.16, 400.48, 416.22  }
-#define DEFAULT_AXIS_STEPS_PER_UNIT 	{ 160.12, 160.12, 400.482, 457.63} // Calibrate 5/14/20 from M503
+#define DEFAULT_AXIS_STEPS_PER_UNIT 	{ 160.12, 160.12, 400.482, 408.598} // Calibrate 11/14/24 from M503
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
