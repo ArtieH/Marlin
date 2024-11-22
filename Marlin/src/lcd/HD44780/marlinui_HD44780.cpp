@@ -881,7 +881,7 @@ void MarlinUI::draw_status_message(const bool blink) {
         const duration_t elapsedt = print_job_timer.duration();
         const uint8_t timepos = TPOFFSET - elapsedt.toDigital(buffer);
         IF_DISABLED(LCD_INFO_SCREEN_STYLE, lcd_put_lchar(timepos - 1, 2, 0x20));
-        lcd_put_lchar(TERN(LCD_INFO_SCREEN_STYLE, 11, timepos), 2, LCD_STR_CLOCK[0]); //'E'); AVH
+        lcd_put_lchar(TERN(LCD_INFO_SCREEN_STYLE, 11, timepos), 2, 'E');
         lcd_put_u8str(buffer);
       }
     }
