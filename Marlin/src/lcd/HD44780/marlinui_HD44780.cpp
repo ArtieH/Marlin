@@ -811,17 +811,18 @@ void MarlinUI::draw_status_message(const bool blink) {
     }
   #endif
 
-  #if ENABLED(SHOW_ELAPSED_TIME)
+  #if ENABLED(SHOW_ELAPSED_TIME)   //AVH
     void MarlinUI::drawElapsed() {
       if (printJobOngoing()) {
         const duration_t elapsedt = print_job_timer.duration();
         timepos = TPOFFSET - elapsedt.toDigital(buffer);
         TERN_(NOT(LCD_INFO_SCREEN_STYLE), lcd_put_lchar(timepos - 1, 2, 0x20);)
-        lcd_put_lchar(TERN(LCD_INFO_SCREEN_STYLE, 11, timepos), 2, 'E');
+        lcd_put_lchar(TERN(LCD_INFO_SCREEN_STYLE, 11, timepos), 2, LCD_STR_CLOCK[0]);
         lcd_put_u8str(buffer);
       }
     }
   #endif
+  //lcd_put_lchar(TERN(LCD_INFO_SCREEN_STYLE, 11, timepos), 2, 'E');
 
 #endif // HAS_PRINT_PROGRESS
 
