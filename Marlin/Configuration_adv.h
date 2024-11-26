@@ -3725,8 +3725,14 @@
  * Startup commands
  *
  * Execute certain G-code commands immediately after power-on.
- */
-#define STARTUP_COMMANDS "M42 P002 S0\nM42 P003 S0\nM603 L581 T0 U670\nM603 L615 T1 U670" //AVH
+ * 
+ * Turn off Bed Cooling Fan (P0_02)
+ * Turn off Controller Fan (P0_03)
+ * Set load and unload distances for E0 and E1
+ * Set M810 and M811 G-Code Macros for single extruder
+ * 
+ *  */
+#define STARTUP_COMMANDS "M42 P002 S0\nM42 P003 S0\nM603 L581 T0 U670\nM603 L615 T1 U670\nM810 G90\nM811 G90" //AVH
 
 /**
  * G-code Macros
