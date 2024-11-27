@@ -3732,7 +3732,7 @@
  * Set M810 and M811 G-Code Macros for single extruder
  * 
  *  */
-#define STARTUP_COMMANDS "M42 P002 S0\nM42 P003 S0\nM603 L581 T0 U670\nM603 L615 T1 U670\nM810 G90\nM811 G90\nM117 Single extruder set" //AVH
+#define STARTUP_COMMANDS "M42 P002 S0\nM42 P003 S0\nM603 L581 T0 U670\nM603 L615 T1 U670\nM810 G90\nM811 G90\nM117 Single extruder mode" //AVH
 
 /**
  * G-code Macros
@@ -3766,11 +3766,11 @@
   #define MAIN_MENU_ITEM_1_GCODE "M140 S0\nM104 S0\nM107"
 
   #define MAIN_MENU_ITEM_2_DESC "Set Dual Extruder"
-  #define MAIN_MENU_ITEM_2_GCODE "M810 G91|G1 E-170 F3600|G92 E0|G90\nM811 G91|G1 E150 F3600|G92 E0|G90\nM117 Dual extruder set"
+  #define MAIN_MENU_ITEM_2_GCODE "M810 G91|G1 E-170 F3600|G92 E0|G90\nM811 G91|G1 E150 F3600|G92 E0|G90\nM117 Dual extruder mode"
   //#define MAIN_MENU_ITEM_2_CONFIRM
 
   #define MAIN_MENU_ITEM_3_DESC "Set Single Extruder"
-  #define MAIN_MENU_ITEM_3_GCODE "M810 G90\nM811 G90\nM117 Single extruder set"
+  #define MAIN_MENU_ITEM_3_GCODE "M810 G90\nM811 G90\nM117 Single extruder mode"
   //#define MAIN_MENU_ITEM_3_CONFIRM
 
   #define MAIN_MENU_ITEM_4_DESC "Load E0 " PREHEAT_1_LABEL
