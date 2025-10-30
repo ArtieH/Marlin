@@ -456,7 +456,7 @@ namespace MMU3 {
     if (slot != extruder) {
       if (
         //findaDetectsFilament()
-        //!IS_SD_PRINTING() && !usb_timer.running()
+        //!card.isStillPrinting() && !usb_timer.running()
         !marlin_printingIsActive()
       ) {
         // If Tcodes are used manually through the serial
@@ -867,7 +867,7 @@ namespace MMU3 {
           nozzle_timer.start();
           LogEchoEvent(F("Cooling Timeout started"));
         }
-        else if (nozzle_timer.duration() > (PAUSE_PARK_NOZZLE_TIMEOUT * 1000ul)) { // mins->msec.
+        else if (nozzle_timer.duration() > (PAUSE_PARK_NOZZLE_TIMEOUT * 1000UL)) { // mins->msec.
           mmu_print_saved &= ~(SavedState::CooldownPending);
           mmu_print_saved |= SavedState::Cooldown;
           thermal_setTargetHotend(0);
@@ -1162,7 +1162,7 @@ namespace MMU3 {
               //
               // Instead of doing a very long extrude as in PrusaFirmware,
               // Marlin's own MMU2s code has a better approach to this by spinning
-              // the extruder indefinitelly...
+              // the extruder indefinitely...
               //
               // this ensures that while the MMU is pushing the filament,
               // the extruder will keep rotating, preventing the filament to hit
