@@ -1306,7 +1306,7 @@
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.16, 80.16, 400.48, 416.22  }
-#define DEFAULT_AXIS_STEPS_PER_UNIT 	{ 160.12, 160.12, 400.482, 408.598} // Calibrate 11/14/24 from M503
+#define DEFAULT_AXIS_STEPS_PER_UNIT 	{ 161.33, 161.33, 400.482, 408.598} // Calibrate 11/14/24 from M503
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
@@ -1331,7 +1331,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 5000, 5000, 50, 10000 } //RTH 9/28/2019
+#define DEFAULT_MAX_ACCELERATION      { 5000, 5000, 500, 10000 } //RTH 9/28/2019
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1347,7 +1347,7 @@
  *   M204 T    Travel Acceleration
  */
 #//define DEFAULT_ACCELERATION          3000    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_ACCELERATION          2000 //2000    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          3000 //2000    // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration for retracts
 //#define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z acceleration for travel (non printing) moves
 #define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z acceleration for travel (non printing) moves
@@ -1361,8 +1361,8 @@
  */
 #define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
-  #define DEFAULT_XJERK 15.0
-  #define DEFAULT_YJERK 15.0
+  #define DEFAULT_XJERK 20.0
+  #define DEFAULT_YJERK 20.0
   #define DEFAULT_ZJERK  0.5
   #define DEFAULT_EJERK  16.0
   //#define DEFAULT_IJERK  0.3
@@ -1666,7 +1666,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 32, 0, -0.93 } //{ 32, 0, -0.74 } //{ 32, 0, -0.56 }
+#define NOZZLE_TO_PROBE_OFFSET { 32, 0, -0.65 }
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -1680,7 +1680,7 @@
 
 // X and Y axis travel speed between probes.
 // Leave undefined to use the average of the current XY homing feedrate.
-#define XY_PROBE_FEEDRATE 15000 //(133*60)
+#define XY_PROBE_FEEDRATE (150*60) //(133*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_FEEDRATE_FAST (10*60)
