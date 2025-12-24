@@ -61,11 +61,11 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "ArtieH 10/30/2025, HEVO BLTouch/TMC2208" // Original author or contributor.
+#define STRING_CONFIG_H_AUTHOR "ArtieH 12/12/2025, HEVO BLTouch/TMC2208" // Original author or contributor.
+// Increased default acceleration to 3000 and max to 5000 for xy moves, Increased speed between tram probes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 // @section machine
-
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
   #define MOTHERBOARD BOARD_RAMPS_14_RE_ARM_EFB
@@ -1331,7 +1331,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 2500, 2500, 50, 10000 } //RTH 9/28/2019
+#define DEFAULT_MAX_ACCELERATION      { 5000, 5000, 50, 10000 } //RTH 9/28/2019
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1347,10 +1347,10 @@
  *   M204 T    Travel Acceleration
  */
 #//define DEFAULT_ACCELERATION          3000    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_ACCELERATION          1000 //2000    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          2000 //2000    // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration for retracts
 //#define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z acceleration for travel (non printing) moves
-#define DEFAULT_TRAVEL_ACCELERATION   2000    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z acceleration for travel (non printing) moves
 /**
  * Default Jerk limits (mm/s)
  * Override with M205 X Y Z . . . E
@@ -1680,7 +1680,7 @@
 
 // X and Y axis travel speed between probes.
 // Leave undefined to use the average of the current XY homing feedrate.
-#define XY_PROBE_FEEDRATE 10000 //(133*60)
+#define XY_PROBE_FEEDRATE 15000 //(133*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_FEEDRATE_FAST (10*60)
