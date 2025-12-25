@@ -61,7 +61,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "ArtieH 12/12/2025, HEVO BLTouch/TMC2208" // Original author or contributor.
+#define STRING_CONFIG_H_AUTHOR "ArtieH 12/24/2025, HEVO BLTouch/TMC2208" // Original author or contributor.
 // Increased default acceleration to 3000 and max to 5000 for xy moves, Increased speed between tram probes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
@@ -1666,7 +1666,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 32, 0, -0.65 }
+#define NOZZLE_TO_PROBE_OFFSET { 32, 0, -0.82 }
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -1680,7 +1680,7 @@
 
 // X and Y axis travel speed between probes.
 // Leave undefined to use the average of the current XY homing feedrate.
-#define XY_PROBE_FEEDRATE (150*60) //(133*60)
+#define XY_PROBE_FEEDRATE (250*60) //(133*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_FEEDRATE_FAST (10*60)
@@ -1752,7 +1752,7 @@
  *     But: 'M851 Z+1' with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
 #define Z_CLEARANCE_DEPLOY_PROBE    5 // (mm) Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES  15 // (mm) Z Clearance between probe points
+#define Z_CLEARANCE_BETWEEN_PROBES  12 // (mm) Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // (mm) Z Clearance between multiple probes
 #define Z_PROBE_ERROR_TOLERANCE     3 // (mm) Tolerance for early trigger (<= -probe.offset.z + ZPET)
 //#define Z_AFTER_PROBING           5 // (mm) Z position after probing is done
@@ -1872,7 +1872,7 @@
  */
 //#define Z_IDLE_HEIGHT Z_HOME_POS
 
-#define Z_CLEARANCE_FOR_HOMING  15   // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
+#define Z_CLEARANCE_FOR_HOMING  12   // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
                                       // You'll need this much clearance above Z_MAX_POS to avoid grinding.
 
 //#define Z_AFTER_HOMING         10   // (mm) Height to move to after homing (if Z was homed)
