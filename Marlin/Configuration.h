@@ -723,13 +723,13 @@
     #define DEFAULT_KI_LIST {   1.08,   1.08 }
     #define DEFAULT_KD_LIST { 114.00, 114.00 }
   #else
-    //#define DEFAULT_Kp  22.20
-    //#define DEFAULT_Ki   1.08
-    //#define DEFAULT_Kd 114.00
+    //#define DEFAULT_KP  22.20
+    //#define DEFAULT_KI   1.08
+    //#define DEFAULT_KD 114.00
 	//Hypercube Auto Tune 7/28/2019 @ 210C E3D V6 Hotend
-	#define DEFAULT_Kp 15.47
-	#define DEFAULT_Ki 1.16
-	#define DEFAULT_Kd 51.40
+	#define DEFAULT_KP 15.47
+	#define DEFAULT_KI 1.16
+	#define DEFAULT_KD 51.40
   #endif
 #else
   #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
@@ -826,13 +826,13 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  //#define DEFAULT_bedKp  10.00
-  //#define DEFAULT_bedKi   0.023
-  //#define DEFAULT_bedKd 305.4
+  //#define DEFAULT_BED_KP  10.00
+  //#define DEFAULT_BED_KI   0.023
+  //#define DEFAULT_BED_KD 305.4
   //HyperCube Autotune 3/10/2019 @90c
-	#define DEFAULT_bedKp 346.06
-	#define DEFAULT_bedKi 31.31
-	#define DEFAULT_bedKd 956.07
+	#define DEFAULT_BED_KP 346.06
+	#define DEFAULT_BED_KI 31.31
+	#define DEFAULT_BED_KD 956.07
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #else
   //#define BED_LIMIT_SWITCHING   // Keep the bed temperature within BED_HYSTERESIS of the target
@@ -1353,7 +1353,7 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 500, 500, 40, 150  }//11/12/2019 E Max adjust for Titan Extruder per https://wiki.opensourceecology.org/wiki/Marlin_Settings_for_Geared_Extruders //from BLTouch Advanced Guide (YouTube)
+#define DEFAULT_MAX_FEEDRATE          { 500, 500, 160, 150  }//(1/24/26 update Z from 40) 11/12/2019 E Max adjust for Titan Extruder per https://wiki.opensourceecology.org/wiki/Marlin_Settings_for_Geared_Extruders //from BLTouch Advanced Guide (YouTube)
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
