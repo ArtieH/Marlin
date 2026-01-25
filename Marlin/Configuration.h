@@ -61,7 +61,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "ArtieH 12/24/2025, HEVO BLTouch/TMC2208" // Original author or contributor.
+#define STRING_CONFIG_H_AUTHOR "ArtieH 1/24/2026, HEVO BLTouch/TMC2208" // Original author or contributor.
 // Increased default acceleration to 3000 and max to 5000 for xy moves, Increased speed between tram probes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
