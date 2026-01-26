@@ -1353,7 +1353,7 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 500, 500, 160, 150  }//(1/24/26 update Z from 40) 11/12/2019 E Max adjust for Titan Extruder per https://wiki.opensourceecology.org/wiki/Marlin_Settings_for_Geared_Extruders //from BLTouch Advanced Guide (YouTube)
+#define DEFAULT_MAX_FEEDRATE          { 500, 500, 48, 150  }//(1/24/26 update Z from 40) 11/12/2019 E Max adjust for Titan Extruder per https://wiki.opensourceecology.org/wiki/Marlin_Settings_for_Geared_Extruders //from BLTouch Advanced Guide (YouTube)
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
