@@ -4194,7 +4194,7 @@
  *
  * Execute certain G-code commands immediately after power-on.
  */
-//#define STARTUP_COMMANDS "M17 Z"
+#define STARTUP_COMMANDS "M206 X3 Y4 \n M500"
 
 /**
  * G-code Macros

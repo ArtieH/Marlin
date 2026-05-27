@@ -1719,7 +1719,7 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 25
+#define PROBING_MARGIN 40 //25 AVH 5/23/26
 
 // X and Y axis travel speed between probes.
 // Leave undefined to use the average of the current XY homing feedrate.
@@ -1948,15 +1948,15 @@
 // @section geometry
 
 // The size of the printable area
-#define X_BED_SIZE 284 //280 AVH 5/23/26
+#define X_BED_SIZE 286 //280 AVH 5/23/26
 #define Y_BED_SIZE 296 //287 AVH 5/23/26
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS -3 //0 AVH 5/23/26
-#define Y_MIN_POS -8 //-9 AVH 5/23/26
+#define Y_MIN_POS -4 //-9 AVH 5/23/26
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE
-#define Y_MAX_POS Y_BED_SIZE
+#define X_MAX_POS X_BED_SIZE - X_MIN_POS
+#define Y_MAX_POS Y_BED_SIZE - Y_MIN_POS
 #define Z_MAX_POS 276
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
